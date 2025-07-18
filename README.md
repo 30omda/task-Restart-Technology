@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🛠️ Admin Dashboard — Next.js Technical Task
 
-## Getting Started
+> **Live Demo:** [https://example.com](https://example.com)  
+> **Login Credentials:**  
+> 📧 Email: `dev.aert@gmail.com`  
+> 🔐 Password: `helloworld`
 
-First, run the development server:
+---
+
+## 📌 Project Description
+
+This project is a **simple admin dashboard** built using **Next.js (App Router)**, **Tailwind CSS**, and **Redux Toolkit**. It demonstrates modern frontend best practices such as:
+
+### 🔐 Authentication & Route Protection
+
+- Implements a **static login system** with email and password validation.
+- On successful login, a **mock token** is saved in browser cookies (`js-cookie`).
+- Middleware is used to protect routes:
+  - If no token is found, users are redirected to the login page.
+  - If a logged-in user tries to access `/login`, they’re redirected to `/dashboard`.
+
+### 🧭 Layout & Navigation
+
+- A **responsive sidebar layout** is used for all authenticated pages.
+- Sidebar links:
+  - `/dashboard`: Shows a welcome message.
+  - `/products`: Product listing with CRUD features.
+  - `/settings`: An empty placeholder for future expansion.
+- Top bar and sidebar components are cleanly separated and reusable (`app-sidebar`, `site-header`, `nav-user`, etc.).
+
+### 🛒 Products CRUD System
+
+- Fetches products from a **mock REST API**:
+  [https://62fb62afe4bcaf5351837ac1.mockapi.io/product](https://62fb62afe4bcaf5351837ac1.mockapi.io/product)
+- Displays a **products table** with:
+  - Image
+  - Name
+  - Description
+  - Category
+  - Price
+- Supports:
+  - `Add` product via modal form (`react-hook-form` + `Zod`)
+  - `Edit` product
+  - `Delete` product
+- Data is managed via Redux Toolkit and API calls are abstracted through `axiosInstance` & `axiosCroud.js`.
+
+### ⚙️ Tools & Libraries Used
+
+| Feature                     | Library / Tool                          |
+|----------------------------|------------------------------------------|
+| Framework                  | Next.js (v15 — App Router)              |
+| Styling                    | Tailwind CSS v4                         |
+| UI Components              | Shadcn UI (Radix primitives)            |
+| State Management           | Redux Toolkit + React Redux             |
+| Forms                      | React Hook Form + Zod                   |
+| HTTP Requests              | Axios                                   |
+| Cookies Handling           | js-cookie                               |
+| Notifications              | react-hot-toast + sonner                |
+| Table UI                   | @tanstack/react-table                   |
+| Icons                      | lucide-react + @tabler/icons-react      |
+| Middleware                 | next middleware.ts                      |
+
+---
+
+## 📁 Project Folder Structure (Simplified)
 
 ```bash
+src/
+├── app/
+│   ├── login/                  # Public login page
+│   ├── (protected)/            # All routes protected by middleware
+│   │   ├── dashboard/          # Admin welcome page
+│   │   ├── products/           # Product CRUD page
+│   │   ├── product-details/[id]/  # Single product details (optional)
+│   │   ├── settings/           # Placeholder settings page
+│   │   └── layout.js           # Sidebar layout for all protected routes
+│   └── layout.js               # Global layout (theme, fonts, etc.)
+│
+├── components/
+│   ├── Products/               # Product management components
+│   └── ui/                     # Shared UI (Sidebar, Header, Navs, etc.)
+│
+├── hooks/                     # Custom React hooks (e.g. use-mobile)
+│
+├── lib/                       # Utility functions
+│
+├── services/                  # Axios config + API methods (CRUD)
+│
+├── store/                     # Redux store, slices, state logic
+│
+├── utils/
+│   ├── Cookies/               # Token helpers for login/logout
+│   └── localStorage/          # Extra storage utilities
+│
+├── assets/                    # Static files (icons, images)
+├── middleware.js              # Auth middleware
+├── globals.css                # Tailwind base styles
+
+
+
+# Clone the repo
+git clone https://github.com/your-username/stask.git && cd stask
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Open your browser
+http://localhost:3000
