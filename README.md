@@ -52,7 +52,7 @@ This project is a **simple admin dashboard** built using **Next.js (App Router)*
 | Styling                    | Tailwind CSS v4                         |
 | UI Components              | Shadcn UI (Radix primitives)            |
 | State Management           | Redux Toolkit + React Redux             |
-| Forms                      | React Hook Form + Zod                   |
+| Forms                      | React Hook Form + Yup                   |
 | HTTP Requests              | Axios                                   |
 | Cookies Handling           | js-cookie                               |
 | Notifications              | react-hot-toast + sonner                |
