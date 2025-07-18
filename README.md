@@ -39,7 +39,7 @@ This project is a **simple admin dashboard** built using **Next.js (App Router)*
   - Category
   - Price
 - Supports:
-  - `Add` product via modal form (`react-hook-form` + `Zod`)
+  - `Add` product via modal form (`react-hook-form` + `Yup` + `resolvers`)
   - `Edit` product
   - `Delete` product
 - Data is managed via Redux Toolkit and API calls are abstracted through `axiosInstance` & `axiosCroud.js`.
