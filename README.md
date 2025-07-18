@@ -1,6 +1,6 @@
 # 🛠️ Admin Dashboard — Next.js Technical Task
 
-> **Live Demo:** [https://example.com](https://example.com)  
+> **Live Demo:** [https://task-restart-technology.vercel.app/](https://task-restart-technology.vercel.app/)  
 > **Login Credentials:**  
 > 📧 Email: `dev.aert@gmail.com`  
 > 🔐 Password: `helloworld`
