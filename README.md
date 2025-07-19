@@ -55,7 +55,7 @@ This project is a **simple admin dashboard** built using **Next.js (App Router)*
 | Forms                      | React Hook Form + Yup                   |
 | HTTP Requests              | Axios                                   |
 | Cookies Handling           | js-cookie                               |
-| Notifications              | react-hot-toast + sonner                |
+| Notifications              | react-hot-toast                |
 | Table UI                   | @tanstack/react-table                   |
 | Icons                      | lucide-react + @tabler/icons-react      |
 | Middleware                 | next middleware.ts                      |
