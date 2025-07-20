@@ -17,11 +17,16 @@ export default async function ProductDetailsPage({ params }) {
     return (
         <div className="max-w-xl mx-auto p-6">
             <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
+            
+
             <Image
                 src={product.image}
                 alt={product.name}
+                width={400}
+                height={300} 
                 className="w-full rounded-lg mb-4"
             />
+
             <p className="text-gray-700 mb-2">
                 <strong>Description:</strong> {product.description}
             </p>

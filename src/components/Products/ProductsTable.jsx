@@ -60,7 +60,8 @@ const Page = () => {
     const [itemsPerPage, setItemsPerPage] = useState(5);
     const [loading, setLoading] = useState(true);
     const [allProducts, setAllProducts] = useState([]);
-    const [setTotalProducts] = useState(0);
+    const [totalProducts, setTotalProducts] = useState(0);
+
 
     const dispatch = useDispatch();
 
